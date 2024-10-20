@@ -1,4 +1,5 @@
-from database import add_task_to_db, get_tasks_from_db, find_reminders, update_task_in_db, delete_task_from_db, get_task_from_db
+from database import add_task_to_db, get_tasks_from_db, find_reminders, update_task_in_db, delete_task_from_db, \
+    get_task_from_db
 from datetime import datetime
 import logging
 from telegram import Update
@@ -111,4 +112,4 @@ async def execute_reminders(update: Update, context: ContextTypes.DEFAULT_TYPE):
     for task in tasks:
         if task[2] == "incomplere":
             context.bot.send_message(chat_id=task[4],
-                                 text=f"Attention! The task '{task[1]}' can be done till {task[2]}.")
+                                     text=f"Attention! The task '{task[1]}' can be done till {task[2]}.")

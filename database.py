@@ -78,7 +78,6 @@ def find_reminders():
     cursor = conn.cursor()
     today = datetime.now().date()
     tomorrow = today + timedelta(days=1)
-
     cursor.execute("SELECT * FROM tasks WHERE date = ?", (tomorrow,))
     tasks = cursor.fetchall()
     conn.close()
