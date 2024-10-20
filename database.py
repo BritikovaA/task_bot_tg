@@ -74,6 +74,7 @@ def delete_task_from_db(task_id, user):
 
 
 def find_reminders():
+    '''function for finding tasks with deadline'''
     conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
     today = datetime.now().date()

@@ -108,6 +108,7 @@ async def delete_task(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
 
 
 async def execute_reminders(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    '''function for remainding about tasks'''
     tasks = find_reminders()
     for task in tasks:
         if task[2] == "incomplere":
